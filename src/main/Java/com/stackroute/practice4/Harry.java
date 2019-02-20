@@ -5,7 +5,14 @@ import java.util.regex.Pattern;
 public class Harry {
     public static boolean checkHarry(String str)
     {
-        boolean b = Pattern.matches("\\bHarry\\b", str);
-        return b;
+         String regex = "Harry";
+        boolean a=false;
+        Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(str);
+        while (matcher.find()) {
+            a=true;
+            break;
+        }
+        return a;
     }
 }
